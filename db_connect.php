@@ -10,7 +10,7 @@ $password = "Jhared123"; // Azure MySQL password
 $dbname = "budget_tracker"; // Azure MySQL database name
 $port = 3306;
 
-$ssl_cert_path = "/site/wwwroot/DigiCertGlobalRootCA.crt.pem";
+$ssl_cert_path = "/home/site/wwwroot/DigiCertGlobalRootCA.crt.pem";
 
 $conn = mysqli_init();
 
