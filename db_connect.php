@@ -9,9 +9,9 @@ $username = "lucidojohncarlo"; // Azure MySQL username
 $password = "Jhared123"; // Azure MySQL password
 $dbname = "budget_tracker"; // Azure MySQL database name
 
-$ssl_ca = "/site/wwwroot/DigiCertGlobalRootCA.crt.pem";
+$ssl_cert_path = "/site/wwwroot/DigiCertGlobalRootCA.crt.pem";
 
-$conn = new mysqli($servername, $username, $password, $dbname, 3306, $ssl_ca);
+$conn = new mysqli($servername, $username, $password, $dbname, 3306, $ssl_cert_path);
 
 
 
