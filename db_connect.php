@@ -8,11 +8,18 @@ $servername = "lucidojohncarlo.mysql.database.azure.com"; // Azure MySQL server 
 $username = "lucidojohncarlo"; // Azure MySQL username
 $password = "Jhared123"; // Azure MySQL password
 $dbname = "budget_tracker"; // Azure MySQL database name
+$port = 3306;
 
 $ssl_cert_path = "/site/wwwroot/DigiCertGlobalRootCA.crt.pem";
 
-$conn = new mysqli($servername, $username, $password, $dbname, 3306, $ssl_cert_path);
+$conn = mysqli_init();
 
+mysqli_ssl_set($conn, NULL, NULL, $ssl_cert_path, NULL, NULL);
+
+// Establish secure connection
+if (!mysqli_real_connect($conn, $servername, $username, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL)) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 
 if ($conn->connect_error) {
